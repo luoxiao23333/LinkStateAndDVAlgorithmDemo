@@ -124,7 +124,7 @@ int main()
 		}
 	}
 	gap();
-	{// Q3 不会中毒。因为v3-v4-v6 cost也是3，和v3-v6变化前一样。不像课件例子从5迭代到60
+	{// Q3 不会中毒。因为v3-v4-v6 cost也是3，和v3-v6变化前一样。不像课件例子从5迭代到50
 		printf("For Question3, iteration time is %d\n", linkCostChange(3, 6, 50));
 		linkCostChange(3, 6, 3);//change back
 	}
@@ -397,7 +397,7 @@ inline void NodeInfo::processReceivedDVPackets()
 
 inline void NodeInfo::costToNeighborChange(const int neighborNode)
 {
-	this->DVAttribute.shortestPath[neighborNode] = graph[this->node][neighborNode];
+	//this->DVAttribute.shortestPath[neighborNode] = graph[this->node][neighborNode];
 	this->propogateChange();
 	this->deliverPackets();
 }
