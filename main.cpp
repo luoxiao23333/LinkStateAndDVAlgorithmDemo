@@ -332,7 +332,7 @@ int linkCostChange(const int x, const int y, const int newCost)
 	nodeInfos[x].costToNeighborChange(y);
 	nodeInfos[y].costToNeighborChange(x);
 
-	return doDVUntilConverge();
+	return doDVUntilConverge() + 1;
 }
 
 
