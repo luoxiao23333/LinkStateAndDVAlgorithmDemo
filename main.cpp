@@ -391,17 +391,6 @@ inline void NodeInfo::processReceivedDVPackets()
 		// update your knowledge of neighbor
 		DVAttribute.neighborShortestPaths[packet.sourceNode] = packet.shortestPath;
 	}
-	if (receivedPackets.size() >= 100)
-	{
-		// 控制输出间隙
-		static int time = 0;
-		++time;
-		if (time % 100 == 0)
-		{
-			printf("Node %d receive %d packet in one iteration! Too much packets!!!\n",
-				this->node, receivedPackets.size());
-		}
-	}
 	propogateChange();
 	receivedPackets.clear();
 }
@@ -419,6 +408,7 @@ inline void NodeInfo::deliverPackets()
 	{
 		nodeInfos.at(packet.destinationNode).receiveNewVector(packet);
 	}
+	sendingPackets.clear();
 }
 
 inline bool NodeInfo::isConverge() const { return convergeFlag; }
