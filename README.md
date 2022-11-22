@@ -3,5 +3,6 @@
 Fllow page 12 and 20 in Chap5An 
 
 Execution Result: 
-![图片](https://user-images.githubusercontent.com/47754424/202612449-5eea3b7a-4db3-4846-a135-ca76ea29918d.png)
+<img width="735" alt="image" src="https://user-images.githubusercontent.com/47754424/203207441-07335276-f947-489e-be05-a74869ebceac.png">
+
 
