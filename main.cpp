@@ -88,6 +88,7 @@ int linkCostChange(const int x, const int y, const int newCost);
 
 int main()
 {
+
 	graph = initGraph();
 	nodeInfos = initNodeInfoList();
 	initDV();
@@ -331,6 +332,11 @@ int linkCostChange(const int x, const int y, const int newCost)
 	graph[x][y] = graph[y][x] = newCost;
 	nodeInfos[x].costToNeighborChange(y);
 	nodeInfos[y].costToNeighborChange(x);
+
+	if (nodeInfos[x].isConverge() && nodeInfos[y].isConverge())
+	{
+		return 1;
+	}
 
 	return doDVUntilConverge() + 1;
 }
